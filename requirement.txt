@@ -1,0 +1,10 @@
+langchain-core
+langchain-community
+langchain-mistralai
+python-dotenv
+SpeechRecognition
+gTTS
+pygame
+pyaudio
+pypdf
+docx2txt
