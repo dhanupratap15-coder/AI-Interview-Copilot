@@ -12,11 +12,6 @@ llm= mistral_chat_modle.llm
 from langchain_core.output_parsers import StrOutputParser
 parser = StrOutputParser()
 
-
-# -------------------------
-# Setup
-# -------------------------
-
 recognizer = sr.Recognizer()
 recognizer.pause_threshold = 2
 
@@ -33,10 +28,6 @@ qust = [
 data = {}
 
 pygame.mixer.init()
-
-# -------------------------
-# Speak Function
-# -------------------------
 
 def speak(text):
 
@@ -69,10 +60,6 @@ def speak(text):
 
         print("Speech Error:", e)
 
-# -------------------------
-# Welcome Message
-# -------------------------
-
 name = input("What is your good name : ")
 
 welcome = (
@@ -84,10 +71,6 @@ welcome = (
 print("\n" + welcome)
 
 speak(welcome)
-
-# -------------------------
-# Introduction
-# -------------------------
 
 
 try:
@@ -124,10 +107,6 @@ except sr.RequestError as e:
     print("Error:", e)
 
     data["Introduction"] = ""
-
-# -------------------------
-# Question Round
-# -------------------------
 
 for question in qust:
 
@@ -170,9 +149,6 @@ for question in qust:
 
         data[question] = ""
 
-# -------------------------
-# Close Mixer
-# -------------------------
 
 pygame.mixer.quit()
 
